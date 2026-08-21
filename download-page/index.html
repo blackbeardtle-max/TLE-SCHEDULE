@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07345f">
+<title>Download TLE SCHEDULE</title>
+<style>
+:root{--navy:#07345f;--blue:#0d4f91;--gold:#e8b900;--bg:#f4f7fb;--text:#172033}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+.hero{background:linear-gradient(135deg,var(--navy),var(--blue));padding:34px 18px;color:white;text-align:center}
+.logo{max-width:420px;width:min(82vw,420px);height:auto}.hero h1{margin:18px 0 5px;font-size:30px}.hero p{margin:0;opacity:.85}
+.wrap{max-width:900px;margin:26px auto;padding:0 16px}.card{background:white;border-radius:18px;padding:24px;box-shadow:0 10px 35px rgba(15,23,42,.09);margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.btn{display:flex;align-items:center;justify-content:center;min-height:58px;padding:14px 18px;border-radius:12px;text-decoration:none;font-weight:800;text-align:center}.primary{background:var(--blue);color:#fff}.secondary{background:#eaf3ff;color:var(--blue)}.web{background:#fff;border:1px solid #b9cde3;color:var(--blue)}
+.note{font-size:13px;color:#64748b;line-height:1.6;margin-top:18px}.platform{font-size:12px;color:#64748b;margin-top:6px;text-align:center}@media(max-width:620px){.grid{grid-template-columns:1fr}.hero h1{font-size:24px}.card{padding:18px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <img class="logo" src="assets/tle-logo.png" alt="Tri Lautan Emas">
+  <h1>TLE SCHEDULE</h1>
+  <p>Vessel &amp; Crew Job Management System</p>
+</header>
+<main class="wrap">
+  <section class="card">
+    <div class="grid">
+      <div>
+        <a class="btn primary" href="TLE-SCHEDULE-Android.apk" download>DOWNLOAD ANDROID APK</a>
+        <div class="platform">Android 7.0 atau lebih baru</div>
+      </div>
+      <div>
+        <a class="btn primary" href="TLE-SCHEDULE-Windows-Setup.exe" download>DOWNLOAD WINDOWS APP</a>
+        <div class="platform">Windows 10 / 11 64-bit</div>
+      </div>
+      <div>
+        <a class="btn web" href="https://script.google.com/macros/s/AKfycbxzlIS5-PrPukc5DuIVRPoBtg0nT9rDfjF-27E50IC5qfveW6skVZ9eAUgZ0VS9ReA8/exec" target="_blank" rel="noopener">OPEN WEB VERSION</a>
+      </div>
+      <div>
+        <a class="btn secondary" href="#install">PETUNJUK INSTALASI</a>
+      </div>
+    </div>
+    <p class="note">Aplikasi menggunakan sistem TLE SCHEDULE yang sama dengan versi web. Login Google tetap dilakukan melalui browser sistem agar akses Google Sheets/Drive tetap aman dan kompatibel.</p>
+  </section>
+  <section class="card" id="install">
+    <h2>Petunjuk Instalasi</h2>
+    <p class="note"><b>Android:</b> download APK, buka file, izinkan instalasi dari sumber ini bila Android meminta, lalu install. TLE SCHEDULE akan membuka sistem melalui Chrome Custom Tab sehingga akun Google yang sudah login dapat digunakan.</p>
+    <p class="note"><b>Windows:</b> download Setup.exe, jalankan installer, lalu buka shortcut TLE SCHEDULE. Aplikasi membuka Microsoft Edge dalam mode aplikasi (tanpa tab browser biasa). Bila Edge tidak tersedia, browser default digunakan.</p>
+  </section>
+</main>
+</body>
+</html>
