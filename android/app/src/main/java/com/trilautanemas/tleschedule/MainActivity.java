@@ -30,14 +30,6 @@ public class MainActivity extends Activity {
     protected void onResume() {
         super.onResume();
 
-        /*
-         * Saat Activity pertama kali dibuka:
-         * customTabOpened masih false.
-         *
-         * Setelah pengguna menutup Custom Tab,
-         * Activity kembali ke onResume dan aplikasi ditutup
-         * secara rapi.
-         */
         if (customTabOpened) {
             finish();
         }
@@ -58,29 +50,19 @@ public class MainActivity extends Activity {
 
         CustomTabsIntent customTabsIntent =
                 new CustomTabsIntent.Builder()
-
-                        // Jangan tampilkan judul halaman.
                         .setShowTitle(false)
-
-                        // Toolbar dapat menghilang ketika halaman di-scroll.
                         .setUrlBarHidingEnabled(true)
-
-                        // Warna mengikuti identitas TLE.
                         .setDefaultColorSchemeParams(colors)
-
-                        // Animasi lebih terasa seperti membuka aplikasi.
                         .setStartAnimations(
                                 this,
                                 android.R.anim.fade_in,
                                 android.R.anim.fade_out
                         )
-
                         .setExitAnimations(
                                 this,
                                 android.R.anim.fade_in,
                                 android.R.anim.fade_out
                         )
-
                         .build();
 
         try {
