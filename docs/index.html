@@ -1,51 +1,786 @@
 <!doctype html>
 <html lang="id">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#07345f">
-<title>Download TLE SCHEDULE</title>
-<style>
-:root{--navy:#07345f;--blue:#0d4f91;--gold:#e8b900;--bg:#f4f7fb;--text:#172033}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
-.hero{background:linear-gradient(135deg,var(--navy),var(--blue));padding:34px 18px;color:white;text-align:center}
-.logo{max-width:420px;width:min(82vw,420px);height:auto}.hero h1{margin:18px 0 5px;font-size:30px}.hero p{margin:0;opacity:.85}
-.wrap{max-width:900px;margin:26px auto;padding:0 16px}.card{background:white;border-radius:18px;padding:24px;box-shadow:0 10px 35px rgba(15,23,42,.09);margin-bottom:18px}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.btn{display:flex;align-items:center;justify-content:center;min-height:58px;padding:14px 18px;border-radius:12px;text-decoration:none;font-weight:800;text-align:center}.primary{background:var(--blue);color:#fff}.secondary{background:#eaf3ff;color:var(--blue)}.web{background:#fff;border:1px solid #b9cde3;color:var(--blue)}
-.note{font-size:13px;color:#64748b;line-height:1.6;margin-top:18px}.platform{font-size:12px;color:#64748b;margin-top:6px;text-align:center}@media(max-width:620px){.grid{grid-template-columns:1fr}.hero h1{font-size:24px}.card{padding:18px}}
-</style>
+
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="theme-color"
+    content="#07345f"
+  >
+
+  <title>Download TLE SCHEDULE</title>
+
+
+  <style>
+
+    :root {
+
+      --navy: #07345f;
+      --blue: #0d4f91;
+      --gold: #e8b900;
+
+      --bg: #f4f7fb;
+      --text: #172033;
+
+      --border: #d8e2ef;
+      --soft-blue: #e9f2fc;
+
+    }
+
+
+    * {
+
+      box-sizing: border-box;
+
+    }
+
+
+    html {
+
+      scroll-behavior: smooth;
+
+    }
+
+
+    body {
+
+      margin: 0;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      background: var(--bg);
+
+      color: var(--text);
+
+    }
+
+
+    /* ========================================================
+       HEADER
+       ======================================================== */
+
+    .hero {
+
+      background:
+        linear-gradient(
+          135deg,
+          #07345f,
+          #135a9c
+        );
+
+      padding:
+        34px
+        18px
+        36px;
+
+      color: white;
+
+      text-align: center;
+
+    }
+
+
+    .logo {
+
+      display: block;
+
+      width: min(82vw, 420px);
+
+      height: auto;
+
+      margin:
+        0 auto
+        18px;
+
+      object-fit: contain;
+
+    }
+
+
+    .hero h1 {
+
+      margin:
+        8px
+        0
+        2px;
+
+      font-size: 30px;
+
+      font-weight: 800;
+
+      letter-spacing: .3px;
+
+    }
+
+
+    .hero p {
+
+      margin: 0;
+
+      opacity: .88;
+
+      font-size: 16px;
+
+    }
+
+
+    /* ========================================================
+       MAIN
+       ======================================================== */
+
+    .wrap {
+
+      max-width: 900px;
+
+      margin:
+        26px auto;
+
+      padding:
+        0 16px
+        34px;
+
+    }
+
+
+    .card {
+
+      background: white;
+
+      border-radius: 18px;
+
+      padding: 24px;
+
+      margin-bottom: 18px;
+
+      box-shadow:
+        0 10px 35px
+        rgba(17, 32, 55, .10);
+
+    }
+
+
+    .grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 14px;
+
+    }
+
+
+    .download-box {
+
+      text-align: center;
+
+    }
+
+
+    /* ========================================================
+       BUTTONS
+       ======================================================== */
+
+    .btn {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      width: 100%;
+
+      min-height: 59px;
+
+      padding:
+        14px
+        18px;
+
+      border-radius: 12px;
+
+      text-decoration: none;
+
+      font-weight: 800;
+
+      font-size: 17px;
+
+      letter-spacing: .2px;
+
+      transition:
+        transform .15s ease,
+        box-shadow .15s ease,
+        background .15s ease;
+
+      cursor: pointer;
+
+    }
+
+
+    .btn:hover {
+
+      transform: translateY(-1px);
+
+      box-shadow:
+        0 8px 22px
+        rgba(13, 79, 145, .18);
+
+    }
+
+
+    .btn.primary {
+
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          #0d4f91,
+          #1766ad
+        );
+
+    }
+
+
+    .btn.web {
+
+      color: #0d4f91;
+
+      background: white;
+
+      border: 1px solid #a9c9ec;
+
+    }
+
+
+    .btn.secondary {
+
+      color: #0d4f91;
+
+      background: var(--soft-blue);
+
+    }
+
+
+    .platform {
+
+      margin-top: 8px;
+
+      color: #64748b;
+
+      font-size: 12px;
+
+      text-align: center;
+
+    }
+
+
+    /* ========================================================
+       NOTE
+       ======================================================== */
+
+    .note {
+
+      margin:
+        20px
+        0
+        0;
+
+      color: #64748b;
+
+      font-size: 13px;
+
+      line-height: 1.6;
+
+    }
+
+
+    /* ========================================================
+       INSTALL SECTION
+       ======================================================== */
+
+    .card h2 {
+
+      margin:
+        0
+        0
+        18px;
+
+      color: #0b3159;
+
+      font-size: 24px;
+
+    }
+
+
+    .install-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 20px;
+
+    }
+
+
+    .install-block {
+
+      padding: 18px;
+
+      border: 1px solid var(--border);
+
+      border-radius: 14px;
+
+      background: #fafcff;
+
+    }
+
+
+    .install-block h3 {
+
+      margin:
+        0
+        0
+        12px;
+
+      color: #0d4f91;
+
+      font-size: 17px;
+
+    }
+
+
+    .install-block ol {
+
+      margin: 0;
+
+      padding-left: 20px;
+
+      line-height: 1.65;
+
+      color: #445268;
+
+      font-size: 14px;
+
+    }
+
+
+    .install-block li {
+
+      margin-bottom: 7px;
+
+    }
+
+
+    /* ========================================================
+       FOOTER
+       ======================================================== */
+
+    .footer {
+
+      padding:
+        6px
+        16px
+        30px;
+
+      text-align: center;
+
+      color: #718096;
+
+      font-size: 12px;
+
+    }
+
+
+    /* ========================================================
+       MOBILE
+       ======================================================== */
+
+    @media (max-width: 700px) {
+
+      .hero {
+
+        padding:
+          26px
+          14px
+          28px;
+
+      }
+
+
+      .logo {
+
+        width: min(88vw, 340px);
+
+      }
+
+
+      .hero h1 {
+
+        font-size: 25px;
+
+      }
+
+
+      .hero p {
+
+        font-size: 14px;
+
+      }
+
+
+      .wrap {
+
+        margin-top: 18px;
+
+        padding:
+          0 12px
+          28px;
+
+      }
+
+
+      .card {
+
+        padding: 17px;
+
+        border-radius: 15px;
+
+      }
+
+
+      .grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+      }
+
+
+      .install-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .btn {
+
+        min-height: 54px;
+
+        font-size: 15px;
+
+      }
+
+    }
+
+
+    @media (max-width: 380px) {
+
+      .hero h1 {
+
+        font-size: 22px;
+
+      }
+
+
+      .btn {
+
+        font-size: 14px;
+
+      }
+
+    }
+
+  </style>
+
 </head>
+
+
 <body>
-<header class="hero">
-  <img class="logo" src="assets/tle-logo.png" alt="Tri Lautan Emas">
-  <h1>TLE SCHEDULE</h1>
-  <p>Vessel &amp; Crew Job Management System</p>
-</header>
-<main class="wrap">
-  <section class="card">
-    <div class="grid">
-      <div>
-        <a class="btn primary" href="TLE-SCHEDULE-Android.apk" download>DOWNLOAD ANDROID APK</a>
-        <div class="platform">Android 7.0 atau lebih baru</div>
+
+
+  <!-- ========================================================
+       HEADER
+       ======================================================== -->
+
+  <header class="hero">
+
+    <img
+      class="logo"
+      src="assets/tle-logo.png"
+      alt="Tri Lautan Emas"
+    >
+
+    <h1>
+      TLE SCHEDULE
+    </h1>
+
+    <p>
+      Vessel &amp; Crew Job Management System
+    </p>
+
+  </header>
+
+
+
+  <!-- ========================================================
+       MAIN
+       ======================================================== -->
+
+  <main class="wrap">
+
+
+    <!-- DOWNLOAD CARD -->
+
+    <section class="card">
+
+      <div class="grid">
+
+
+        <!-- ANDROID -->
+
+        <div class="download-box">
+
+          <a
+            class="btn primary"
+            href="https://github.com/blackbeardtle-max/TLE-SCHEDULE/releases/latest/download/TLE-SCHEDULE-Android.apk"
+          >
+            DOWNLOAD ANDROID APK
+          </a>
+
+          <div class="platform">
+            Android 7.0 atau lebih baru
+          </div>
+
+        </div>
+
+
+
+        <!-- WINDOWS -->
+
+        <div class="download-box">
+
+          <a
+            class="btn primary"
+            href="https://github.com/blackbeardtle-max/TLE-SCHEDULE/releases/latest/download/TLE-SCHEDULE-Windows-Setup.exe"
+          >
+            DOWNLOAD WINDOWS APP
+          </a>
+
+          <div class="platform">
+            Windows 10 / 11 64-bit
+          </div>
+
+        </div>
+
+
+
+        <!-- WEB VERSION -->
+
+        <div>
+
+          <a
+            class="btn web"
+            href="https://script.google.com/macros/s/AKfycbxzlIS5-PrPukc5DuIVRPoBtg0nT9rDfjF-27E50IC5qfveW6skVZ9eAUgZ0VS9ReA8/exec"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            OPEN WEB VERSION
+          </a>
+
+        </div>
+
+
+
+        <!-- INSTALLATION GUIDE -->
+
+        <div>
+
+          <a
+            class="btn secondary"
+            href="#install"
+          >
+            PETUNJUK INSTALASI
+          </a>
+
+        </div>
+
       </div>
-      <div>
-        <a class="btn primary" href="TLE-SCHEDULE-Windows-Setup.exe" download>DOWNLOAD WINDOWS APP</a>
-        <div class="platform">Windows 10 / 11 64-bit</div>
+
+
+      <p class="note">
+
+        Aplikasi menggunakan sistem TLE SCHEDULE yang sama
+        dengan versi web.
+
+        Login Google tetap dilakukan melalui browser sistem
+        agar akses Google Sheets dan Google Drive tetap aman
+        dan kompatibel.
+
+      </p>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         INSTALLATION GUIDE
+         ====================================================== -->
+
+    <section
+      class="card"
+      id="install"
+    >
+
+      <h2>
+        Petunjuk Instalasi
+      </h2>
+
+
+      <div class="install-grid">
+
+
+        <!-- ANDROID GUIDE -->
+
+        <div class="install-block">
+
+          <h3>
+            Android
+          </h3>
+
+          <ol>
+
+            <li>
+              Tekan
+              <strong>DOWNLOAD ANDROID APK</strong>.
+            </li>
+
+            <li>
+              Tunggu file
+              <strong>TLE-SCHEDULE-Android.apk</strong>
+              selesai diunduh.
+            </li>
+
+            <li>
+              Buka file APK dari folder Download.
+            </li>
+
+            <li>
+              Jika Android meminta izin
+              <strong>Install unknown apps</strong>,
+              izinkan aplikasi/browser yang digunakan.
+            </li>
+
+            <li>
+              Tekan
+              <strong>Install</strong>.
+            </li>
+
+            <li>
+              Setelah selesai, tekan
+              <strong>Open</strong>.
+            </li>
+
+            <li>
+              Login menggunakan akun Google
+              yang memiliki izin akses TLE SCHEDULE.
+            </li>
+
+          </ol>
+
+        </div>
+
+
+
+        <!-- WINDOWS GUIDE -->
+
+        <div class="install-block">
+
+          <h3>
+            Windows
+          </h3>
+
+          <ol>
+
+            <li>
+              Tekan
+              <strong>DOWNLOAD WINDOWS APP</strong>.
+            </li>
+
+            <li>
+              Tunggu file
+              <strong>TLE-SCHEDULE-Windows-Setup.exe</strong>
+              selesai diunduh.
+            </li>
+
+            <li>
+              Jalankan file installer.
+            </li>
+
+            <li>
+              Jika Windows menampilkan
+              <strong>Microsoft Defender SmartScreen</strong>,
+              pilih
+              <strong>More info</strong>
+              lalu
+              <strong>Run anyway</strong>
+              jika Anda yakin file berasal dari repository
+              resmi TLE SCHEDULE.
+            </li>
+
+            <li>
+              Ikuti proses instalasi sampai selesai.
+            </li>
+
+            <li>
+              Jalankan
+              <strong>TLE SCHEDULE</strong>
+              dari Start Menu atau shortcut.
+            </li>
+
+          </ol>
+
+        </div>
+
+
       </div>
-      <div>
-        <a class="btn web" href="https://script.google.com/macros/s/AKfycbxzlIS5-PrPukc5DuIVRPoBtg0nT9rDfjF-27E50IC5qfveW6skVZ9eAUgZ0VS9ReA8/exec" target="_blank" rel="noopener">OPEN WEB VERSION</a>
-      </div>
-      <div>
-        <a class="btn secondary" href="#install">PETUNJUK INSTALASI</a>
-      </div>
-    </div>
-    <p class="note">Aplikasi menggunakan sistem TLE SCHEDULE yang sama dengan versi web. Login Google tetap dilakukan melalui browser sistem agar akses Google Sheets/Drive tetap aman dan kompatibel.</p>
-  </section>
-  <section class="card" id="install">
-    <h2>Petunjuk Instalasi</h2>
-    <p class="note"><b>Android:</b> download APK, buka file, izinkan instalasi dari sumber ini bila Android meminta, lalu install. TLE SCHEDULE akan membuka sistem melalui Chrome Custom Tab sehingga akun Google yang sudah login dapat digunakan.</p>
-    <p class="note"><b>Windows:</b> download Setup.exe, jalankan installer, lalu buka shortcut TLE SCHEDULE. Aplikasi membuka Microsoft Edge dalam mode aplikasi (tanpa tab browser biasa). Bila Edge tidak tersedia, browser default digunakan.</p>
-  </section>
-</main>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- ========================================================
+       FOOTER
+       ======================================================== -->
+
+  <footer class="footer">
+
+    TRI LAUTAN EMAS
+    <br>
+
+    TLE Schedule — Vessel &amp; Crew Job Management System
+
+  </footer>
+
+
 </body>
+
 </html>
